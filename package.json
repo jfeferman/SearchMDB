@@ -1,0 +1,110 @@
+{
+  "name": "search-mdb",
+  "description": "Search Movie Database",
+  "author": "Julio Feferman",
+  "maintainers": [
+    {
+      "name": "Julio Feferman",
+      "email": "julio@unito.com.br"
+    }
+  ],
+  "license": "MIT",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run dev:start",
+    "test": "npm run dev:test",
+    "watch": "npm run dev:test:watch",
+    "build": "npm run build:local ; npm run build:docs",
+    "stage": "echo 'Do not stage handbook directly. Type `npm run stage` from the monorepo root, which bundles the handbook inside strapi then stages both.'",
+    "deploy": "echo 'Do not deploy handbook directly. Type `npm run deploy` from the monorepo root, which bundles the handbook inside strapi then deploys both.'",
+    "dev:start": "cross-env $(cat ./.env.development) webpack-dev-server --mode development --progress --colors --hot --config ./webpack.config.js --host 0.0.0.0",
+    "dev:test": "jest",
+    "dev:test:watch": "jest -- --watch",
+    "build:local": "npm run stage:build",
+    "build:docs": "jsdoc -c ./.jsdoc.conf.json -P ./package.json -d ./docs -r .",
+    "stage:build": "cross-env $(cat ./.env.staging) webpack --mode development --progress",
+    "deploy:build": "cross-env $(cat ./.env.production) webpack --mode production --optimize-minimize --progress",
+    "clean": "rm -fr dist docs *.log",
+    "clean:preinstall": "npm run clean && rm -fr package-lock.json node_modules"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0",
+    "query-string": "^6.8.3",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "styled-components": "^4.4.1"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/plugin-proposal-decorators": "^7.7.0",
+    "@babel/plugin-proposal-do-expressions": "^7.6.0",
+    "@babel/plugin-proposal-export-default-from": "^7.5.2",
+    "@babel/plugin-proposal-export-namespace-from": "^7.5.2",
+    "@babel/plugin-proposal-function-bind": "^7.2.0",
+    "@babel/plugin-proposal-function-sent": "^7.7.0",
+    "@babel/plugin-proposal-json-strings": "^7.2.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.2.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.4.4",
+    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.5.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-syntax-import-meta": "^7.2.0",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
+    "babel-eslint": "^10.0.2",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.0",
+    "babel-plugin-react-html-attrs": "^2.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.2.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "jsdoc": "^3.6.3",
+    "node-sass": "^4.13.0",
+    "react-test-renderer": "^16.11.0",
+    "sass-loader": "^8.0.0",
+    "scss-loader": "0.0.1",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.2",
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/",
+      "\\.(scss|css|less)$": "identity-obj-proxy"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ],
+    "setupFiles": [
+      "<rootDir>/test/jestsetup.js"
+    ],
+    "verbose": true,
+    "testURL": "http://localhost/"
+  },
+  "main": "webpack.config.js",
+  "engines": {
+    "node": "^11.12.0",
+    "npm": "^6.7.0"
+  }
+}
