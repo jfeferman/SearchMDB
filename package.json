@@ -14,13 +14,15 @@
   "scripts": {
     "start": "npm run dev:start",
     "test": "npm run dev:test",
-    "watch": "npm run dev:test:watch",
+    "test:watch": "npm run dev:test:watch",
+    "test:coverage": "npm run dev:test:coverage",
     "build": "npm run build:local ; npm run build:docs",
     "stage": "echo 'Do not stage handbook directly. Type `npm run stage` from the monorepo root, which bundles the handbook inside strapi then stages both.'",
     "deploy": "echo 'Do not deploy handbook directly. Type `npm run deploy` from the monorepo root, which bundles the handbook inside strapi then deploys both.'",
     "dev:start": "cross-env $(cat ./.env.development) webpack-dev-server --mode development --progress --colors --hot --config ./webpack.config.js --host 0.0.0.0",
     "dev:test": "jest",
     "dev:test:watch": "jest -- --watch",
+    "dev:test:coverage": "jest --verbose --coverage",
     "build:local": "npm run stage:build",
     "build:docs": "jsdoc -c ./.jsdoc.conf.json -P ./package.json -d ./docs -r .",
     "stage:build": "cross-env $(cat ./.env.staging) webpack --mode development --progress",
@@ -30,6 +32,11 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "jest-runner-eslint": "^0.7.5",
+    "jest-styled-components": "^6.3.4",
+    "prop-types": "^15.7.2",
     "query-string": "^6.8.3",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
@@ -71,6 +78,7 @@
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.1.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "file-loader": "^4.2.0",
@@ -89,18 +97,54 @@
     "webpack-dev-server": "^3.9.0"
   },
   "jest": {
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/",
-      "\\.(scss|css|less)$": "identity-obj-proxy"
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/coverage/**",
+      "!**/dist/**",
+      "!**/docs/**",
+      "!**/*.config.js",
+      "!**/*index.js",
+      "!preinstall-script.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 50,
+        "branches": 50,
+        "functions": 50,
+        "lines": 50
+      }
     },
-    "testPathIgnorePatterns": [
-      "<rootDir>/node_modules/"
-    ],
-    "setupFiles": [
-      "<rootDir>/test/jestsetup.js"
-    ],
-    "verbose": true,
-    "testURL": "http://localhost/"
+    "projects": [
+      {
+        "runner": "jest-runner-eslint",
+        "displayName": "lint",
+        "testMatch": [
+          "**/*.js"
+        ],
+        "testPathIgnorePatterns": [
+          "./node_modules/",
+          "./dist/",
+          "./docs/"
+        ]
+      },
+      {
+        "displayName": "test",
+        "moduleNameMapper": {
+          "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/packages/cmtr-web/test/testPlaceholder.js",
+          "\\.(scss|less)$": "identity-obj-proxy",
+          "^.+\\.css$": "jest-transform-css"
+        },
+        "transform": {
+          "^.+\\.jsx?$": "babel-jest"
+        },
+        "testPathIgnorePatterns": [
+          "./node_modules/",
+          "./dist/"
+        ],
+        "automock": false
+      }
+    ]
   },
   "main": "webpack.config.js",
   "engines": {

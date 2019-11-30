@@ -19,6 +19,7 @@
         "import/no-named-as-default": "off",
         "no-underscore-dangle": "off",
         "camelcase": "off",
+        "arrow-parens": "off",
         "max-len": [2, 125]
     }
 }
