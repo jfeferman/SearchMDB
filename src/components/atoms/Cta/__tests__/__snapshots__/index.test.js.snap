@@ -2,7 +2,7 @@
 
 exports[`components/atoms/Cta matches the snapshot of the component 1`] = `
 .c0 {
-  border-radius: 6.25rem;
+  border-radius: 0.625rem;
   border: 1px solid;
   cursor: pointer;
   display: block;
@@ -12,7 +12,8 @@ exports[`components/atoms/Cta matches the snapshot of the component 1`] = `
   text-decoration: none;
   white-space: nowrap;
   width: auto;
-  color: #ffffff;
+  background: #DDDDDD;
+  color: #000000;
   font-size: 0.9375rem;
   line-height: 1.0625rem;
   -webkit-letter-spacing: 0.02125rem;

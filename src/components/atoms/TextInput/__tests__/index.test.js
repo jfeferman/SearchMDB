@@ -3,7 +3,7 @@ import { create, act } from 'react-test-renderer';
 import TextInput from '..';
 import { StyledTextInput } from '../styles';
 
-describe('library/atoms/TestSaveInput', () => {
+describe('components/atoms/TextInput', () => {
   let renderer;
   let instance;
   let input;

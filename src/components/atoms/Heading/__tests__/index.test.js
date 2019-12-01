@@ -9,7 +9,7 @@ import {
   StyledH4,
 } from '../styles';
 
-describe('components/atoms/HeadingLevel', () => {
+describe('components/atoms/Heading', () => {
   let renderer;
   let instance;
   let level = '1';

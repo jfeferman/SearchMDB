@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/molecules/Search matches the snapshot of the component 1`] = `
+.c2 {
+  border-radius: 0.625rem;
+  border: 1px solid;
+  cursor: pointer;
+  display: block;
+  font-weight: 300;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+  width: auto;
+  background: #DDDDDD;
+  color: #000000;
+  font-size: 0.9375rem;
+  line-height: 1.0625rem;
+  -webkit-letter-spacing: 0.02125rem;
+  -moz-letter-spacing: 0.02125rem;
+  -ms-letter-spacing: 0.02125rem;
+  letter-spacing: 0.02125rem;
+  padding: 1rem 2.59375rem;
+  vertical-align: middle;
+  outline: 0;
+  -webkit-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+.c2:focus {
+  box-shadow: 0px 0px 2px 2px rgba(23,109,220,0.8);
+}
+
+.c1 {
+  width: 100%;
+  box-sizing: border-box;
+  height: 3.125rem;
+  border: 1px solid #DDDDDD;
+  border-radius: 0.1875rem;
+  background-color: #ffffff;
+  padding-left: 1.25rem;
+  font-size: 1rem;
+  min-width: 25rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 37.5rem;
+}
+
+.c0 div:nth-of-type(1) {
+  margin-right: 0.625rem;
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <input
+      className="c1"
+      placeholder="Search for movie, tv show, person..."
+      type="text"
+    />
+  </div>
+  <div>
+    <button
+      className="c2"
+      disabled={false}
+      type="button"
+    >
+      Search
+    </button>
+  </div>
+</div>
+`;

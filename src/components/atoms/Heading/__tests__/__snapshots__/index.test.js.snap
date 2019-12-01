@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/atoms/HeadingLevel matches the snapshot of the component 1`] = `
+exports[`components/atoms/Heading matches the snapshot of the component 1`] = `
 .c0 {
   font-weight: 300;
   font-style: normal;

@@ -1,8 +1,11 @@
 import React from 'react';
+import { HomePage } from './components/pages';
 
 const App = () => {
   return (
-    <div>Hello MDB</div>
+    <div>
+      <HomePage />
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { px2rem, colors } from '../../styleUtils/globalStyleVariables';
 
 export const StyledButton = styled.button`
-  border-radius: ${px2rem(100)};
+  border-radius: ${px2rem(10)};
   border: 1px solid;
   cursor: pointer;
   display: block;
@@ -11,8 +11,8 @@ export const StyledButton = styled.button`
   text-decoration: none;
   white-space: nowrap;
   width: auto;
-  background: ${colors.vibrantBlue};
-  color: ${colors.white};
+  background: ${colors.lightGray};
+  color: ${colors.black};
   font-size: ${px2rem(15)};
   line-height: ${px2rem(17)};
   letter-spacing: ${px2rem(0.34)};

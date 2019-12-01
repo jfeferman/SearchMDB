@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: preinstall-script.js</title>
+    <title>JSDoc: Source: src/components/atoms/Heading/Heading.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: preinstall-script.js</h1>
+    <h1 class="page-title">Source: src/components/atoms/Heading/Heading.js</h1>
 
     
 
@@ -26,21 +26,50 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * Do NOT allow using `npm` as package manager.
- */
-function blue(text) {
-  return `\u001b[44;1m\u001b[37;1m${text}\u001b[0m`;
-}
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import PropTypes from 'prop-types';
+import {
+  StyledH1,
+  StyledH2,
+  StyledH3,
+  StyledH4,
+} from './styles';
 
-if (process.env.npm_execpath.indexOf('yarn') === -1) {
-  // eslint-disable-next-line no-console
-  console.log(
-    blue('*** You must use Yarn to install dependencies ***'),
-    '\n',
-  );
-  process.exit(1);
-}
+/**
+ * Custom level header
+ * @property {string} level - '1' for H1, '2' for H2, '3' for H3, and '4' for H4
+ */
+const Heading = (props) => {
+  const {
+    level,
+    children,
+    className,
+  } = props;
+  let result = '';
+  // Defaults to heading level one
+  if (!level || level === '1') {
+    result = &lt;StyledH1 className={className}>{children}&lt;/StyledH1>;
+  } else if (level === '2') {
+    result = &lt;StyledH2 className={className}>{children}&lt;/StyledH2>;
+  } else if (level === '3') {
+    result = &lt;StyledH3 className={className}>{children}&lt;/StyledH3>;
+  } else {
+    result = &lt;StyledH4 className={className}>{children}&lt;/StyledH4>;
+  }
+  return result;
+};
+
+Heading.propTypes = {
+  level: PropTypes.oneOf(['1', '2', '3', '4']),
+  children: PropTypes.node,
+  className: PropTypes.string,
+};
+
+Heading.defaultProps = {
+  level: '1',
+};
+
+export default Heading;
 </code></pre>
         </article>
     </section>
