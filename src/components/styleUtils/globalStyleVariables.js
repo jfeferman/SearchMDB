@@ -3,6 +3,7 @@ export const colors = {
   black: '#000000',
   blue: '#176DDC',
   hoverBlue: '#0B356C',
+  lightGray: '#DDDDDD',
 };
 
 /**

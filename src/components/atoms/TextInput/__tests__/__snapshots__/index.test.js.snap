@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`library/atoms/TestSaveInput matches the snapshot of the component 1`] = `
+<input
+  className="sc-bdVaJa hSPkxn"
+  onChange={[MockFunction]}
+  placeholder="Placeholder text"
+  type="text"
+/>
+`;

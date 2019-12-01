@@ -12,12 +12,14 @@ const Cta = (props) => {
   const {
     children,
     disabled,
+    onClick,
   } = props;
 
   return (
     <StyledButton
       type="button"
       disabled={disabled}
+      onClick={onClick}
     >
       {children}
     </StyledButton>
@@ -27,6 +29,7 @@ const Cta = (props) => {
 Cta.propTypes = {
   disabled: PropTypes.bool,
   children: PropTypes.node,
+  onClick: PropTypes.func,
 };
 
 Cta.defaultProps = {

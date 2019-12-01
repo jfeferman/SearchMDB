@@ -33,6 +33,7 @@ exports[`components/atoms/Cta matches the snapshot of the component 1`] = `
 <button
   className="c0"
   disabled={false}
+  onClick={[MockFunction]}
   type="button"
 >
   Test Button
