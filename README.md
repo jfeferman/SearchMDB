@@ -7,7 +7,7 @@ This document provides useful information for developers who need to install or 
 
 The front end is structured by grouping less to more complex components, in the following order:
 
- - atoms: Atomic components that are simplest unit of UI
+ - atoms: Atomic components that are the simplest units of UI
  - molecules: group of atoms
  - organisms: group of molecules
  - pages: group of organisms
@@ -26,7 +26,7 @@ From the Mac OS terminal or most other UNIX-based command lines, follow the step
 
 1. Move into the application folder `cd SearchMDB`
 
-1. Download and unzip the environment varaibles file it into the current folder. The zip can be obtained by the project maintainer. **DO NOT check these files into any publically accessible location.** Also note that the contents of the zip file are all "dot-files" so may not be visible to the default filesystem browser.
+1. Download and unzip the environment varaibles file into the current folder. The zip can be obtained by the project maintainer. **DO NOT check these files into any publically accessible location.** Also note that the contents of the zip file are all "dot-files" so may not be visible to the default filesystem browser.
 
 1. Install all packages `./bootstrap.sh`
 

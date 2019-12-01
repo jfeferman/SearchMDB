@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/atoms/HeadingLevel matches the snapshot of the component 1`] = `
+.c0 {
+  font-weight: 300;
+  font-style: normal;
+  color: #000000;
+  font-size: 2.8125rem;
+  line-height: 3.875rem;
+  -webkit-letter-spacing: 0.076875rem;
+  -moz-letter-spacing: 0.076875rem;
+  -ms-letter-spacing: 0.076875rem;
+  letter-spacing: 0.076875rem;
+}
+
+@media (max-width:768px) {
+  .c0 {
+    font-size: 2.125rem;
+    line-height: 3rem;
+    -webkit-letter-spacing: 0.058125rem;
+    -moz-letter-spacing: 0.058125rem;
+    -ms-letter-spacing: 0.058125rem;
+    letter-spacing: 0.058125rem;
+  }
+}
+
+<h1
+  className="c0"
+>
+  Heading text
+</h1>
+`;
