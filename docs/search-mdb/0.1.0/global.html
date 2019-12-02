@@ -736,6 +736,143 @@ media query with the md min-width value.</p>
     
 
     
+    <h4 class="name" id="filterContentByMediaType"><span class="type-signature"></span>filterContentByMediaType<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Filter the results retrieved from the Movie DB</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The response data to be filtered</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="src_utils_apiQuery.js.html">src/utils/apiQuery.js</a>, <a href="src_utils_apiQuery.js.html#line20">line 20</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="Heading"><span class="type-signature"></span>Heading<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
@@ -871,6 +1008,303 @@ media query with the md min-width value.</p>
 
 
         
+            
+
+    
+
+    
+    <h4 class="name" id="isSessionStorageQuery"><span class="type-signature"></span>isSessionStorageQuery<span class="signature">(query)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Verify if query is stored in cache.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The query to be cached</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="src_utils_apiQuery.js.html">src/utils/apiQuery.js</a>, <a href="src_utils_apiQuery.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True if key exists false if doesn't</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="multiQuery"><span class="type-signature"></span>multiQuery<span class="signature">(query)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Make a multi query to the Movie DB given a query string.
+This object can be later abstracted to handle different types of api calls.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The query string</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="src_utils_apiQuery.js.html">src/utils/apiQuery.js</a>, <a href="src_utils_apiQuery.js.html#line38">line 38</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     
 
     
@@ -886,13 +1320,13 @@ media query with the md min-width value.</p>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#blue">blue</a></li><li><a href="global.html#Cta">Cta</a></li><li><a href="global.html#fontFactory">fontFactory</a></li><li><a href="global.html#fonts">fonts</a></li><li><a href="global.html#Heading">Heading</a></li><li><a href="global.html#mediaDown">mediaDown</a></li><li><a href="global.html#mediaTypes">mediaTypes</a></li><li><a href="global.html#mediaUp">mediaUp</a></li><li><a href="global.html#px2rem">px2rem</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module.html#.exports">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#blue">blue</a></li><li><a href="global.html#Cta">Cta</a></li><li><a href="global.html#filterContentByMediaType">filterContentByMediaType</a></li><li><a href="global.html#fontFactory">fontFactory</a></li><li><a href="global.html#fonts">fonts</a></li><li><a href="global.html#Heading">Heading</a></li><li><a href="global.html#isSessionStorageQuery">isSessionStorageQuery</a></li><li><a href="global.html#mediaDown">mediaDown</a></li><li><a href="global.html#mediaTypes">mediaTypes</a></li><li><a href="global.html#mediaUp">mediaUp</a></li><li><a href="global.html#multiQuery">multiQuery</a></li><li><a href="global.html#px2rem">px2rem</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Sun Dec 01 2019 23:32:08 GMT+0000 (Greenwich Mean Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Mon Dec 02 2019 21:33:48 GMT+0000 (Greenwich Mean Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -19,7 +19,7 @@ The front end is structured by grouping progressively more complex components, i
 
 This structure allows component reuse and to easily compose multiple views.
 
-The front end contains a form that allows the user to query the Movie MDB via `GET` requests to the provided api https://developers.themoviedb.org/3/getting-started/introduction.
+The front end queries the Movie MDB via `GET` requests to the provided api https://developers.themoviedb.org/3/getting-started/introduction. The request is made by an ajax utility.
 
 
 ## Setting up the development environment
@@ -51,15 +51,19 @@ The test infrastructure is based on `jest` and `react-test-renderer`. Testing is
 From a terminal, the following scripts are available in the project root.
 
  - `npm run test` runs all unit tests once
- - `npm run test:watch` runs unit tests interactively (currently not functional)
+ - `npm run test:watch` runs unit tests interactively
  - `npm run test:coverage` builds a test coverage report in `/coverage`. Open `/coverage/Icov-report/index.html` to view an html version of the generated report.
+ - `npm run stylelint` verifies css rules, including those in styled components.
+
+Unit tests are wired to pre-commit and pre-push `husky` hooks. Any code failure caught by tests will prevent these operations from running. It is advised that prior to committing or pushing code, a developer runs the test in interactive mode to visualizae and resolve any test errors.
 
  ## TODO and wishlist
 
-  - Fix interactive test runner. `npm run test:watch` is not working.
   - Abstract api calls to the Movie DB. Currently only a multi query is integrated.
   - Handle pagination of query results. The Movie DB already provides parameters to query results per page.
   - Reason about and substitute react context provider for container ioc pattern.
   - Improve results cards layout, add images, link to a modal dialog with more complete information.
+  - Finalize session storage caching solution.
   - Improve test coverage.
+  - Resolve deployment to `heroku` hosting. Currently, the required .env.production file is not being transmitted prior to deployment, causing the application to crash at runtime. 
 

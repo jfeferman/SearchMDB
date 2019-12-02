@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Heading } from '../../atoms';
+import { CONTENT_KEYS } from '../../../config/constants';
 
 const MovieCard = (props) => {
   const {
@@ -13,7 +14,7 @@ const MovieCard = (props) => {
     <div>
       <Heading level="3">{title}</Heading>
       <div>
-        Released:
+        {CONTENT_KEYS.CARD_RELEASED}
         {' '}
         {release_date}
       </div>

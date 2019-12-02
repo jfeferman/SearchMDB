@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: preinstall-script.js</title>
+    <title>JSDoc: Source: src/utils/Container.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: preinstall-script.js</h1>
+    <h1 class="page-title">Source: src/utils/Container.js</h1>
 
     
 
@@ -27,19 +27,29 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Do NOT allow using `npm` as package manager.
+ * IOC container
  */
-function blue(text) {
-  return `\u001b[44;1m\u001b[37;1m${text}\u001b[0m`;
-}
+export default class Container {
+  constructor() {
+    this.services = {};
+  }
 
-if (process.env.npm_execpath.indexOf('yarn') === -1) {
-  // eslint-disable-next-line no-console
-  console.log(
-    blue('*** You must use Yarn to install dependencies ***'),
-    '\n',
-  );
-  process.exit(1);
+  service(name, callback) {
+    Object.defineProperty(this, name, {
+      get: () => {
+        // eslint-disable-next-line no-prototype-builtins
+        if (!this.services.hasOwnProperty(name)) {
+          this.services[name] = callback(this);
+        }
+
+        return this.services[name];
+      },
+      configurable: true,
+      enumerable: true,
+    });
+
+    return this;
+  }
 }
 </code></pre>
         </article>

@@ -10,6 +10,7 @@ import { GlobalStyle } from '../../styleUtils/globalStyles';
 import { QueryContext } from './context';
 import { multiQuery } from '../../../utils/apiQuery';
 import { StyledResultsBlock } from './styles';
+import { CONTENT_KEYS } from '../../../config/constants';
 
 const HomePage = () => {
   // eslint-disable-next-line no-unused-vars
@@ -37,19 +38,19 @@ const HomePage = () => {
       <StyledResultsBlock>
         {data.movies.length > 0 && (
           <>
-            <Heading level="2">Movies</Heading>
+            <Heading level="2">{CONTENT_KEYS.HOME_MOVIES_HEADING}</Heading>
             {movieCards}
           </>
         )}
         {data.tv.length > 0 && (
           <>
-            <Heading level="2">TV</Heading>
+            <Heading level="2">{CONTENT_KEYS.HOME_TV_HEADING}</Heading>
             {tvCards}
           </>
         )}
         {data.person.length > 0 && (
           <>
-            <Heading level="2">People</Heading>
+            <Heading level="2">{CONTENT_KEYS.HOME_PEOPLE_HEADING}</Heading>
             {personCards}
           </>
         )}

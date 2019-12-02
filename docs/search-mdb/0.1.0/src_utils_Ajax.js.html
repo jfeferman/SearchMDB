@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: preinstall-script.js</title>
+    <title>JSDoc: Source: src/utils/Ajax.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: preinstall-script.js</h1>
+    <h1 class="page-title">Source: src/utils/Ajax.js</h1>
 
     
 
@@ -26,20 +26,43 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * Do NOT allow using `npm` as package manager.
- */
-function blue(text) {
-  return `\u001b[44;1m\u001b[37;1m${text}\u001b[0m`;
-}
+            <pre class="prettyprint source linenums"><code>/* eslint-disable class-methods-use-this */
+const fetch = require('isomorphic-unfetch');
+const qs = require('qs');
 
-if (process.env.npm_execpath.indexOf('yarn') === -1) {
-  // eslint-disable-next-line no-console
-  console.log(
-    blue('*** You must use Yarn to install dependencies ***'),
-    '\n',
-  );
-  process.exit(1);
+/**
+ * Ajax util
+ */
+export default class Ajax {
+  async request(options) {
+    try {
+      const {
+        url, method = 'get', headers = {}, data: body = {}, params = {},
+      } = options;
+      let res;
+      let endpoint = url;
+
+      if (Object.keys(params).length) {
+        endpoint = `${endpoint}?${qs.stringify(params)}`;
+      }
+
+      switch (method.toLowerCase()) {
+        case 'get':
+        default:
+          res = await fetch(endpoint, { method, headers });
+          break;
+        case 'post':
+          res = await fetch(endpoint, { method, headers, body });
+          break;
+      }
+
+      const { ok, status } = res;
+      const data = await res.json();
+      return { ok, status, data };
+    } catch (err) {
+      return { data: null, err };
+    }
+  }
 }
 </code></pre>
         </article>

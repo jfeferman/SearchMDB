@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/molecules/Search matches the snapshot of the component 1`] = `
+.c0 {
+  font-weight: 400;
+  font-style: normal;
+  color: #000000;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  -webkit-letter-spacing: 0.034375rem;
+  -moz-letter-spacing: 0.034375rem;
+  -ms-letter-spacing: 0.034375rem;
+  letter-spacing: 0.034375rem;
+}
+
+@media (max-width:768px) {
+  .c0 {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    -webkit-letter-spacing: 0.034375rem;
+    -moz-letter-spacing: 0.034375rem;
+    -ms-letter-spacing: 0.034375rem;
+    letter-spacing: 0.034375rem;
+  }
+}
+
+<div>
+  <h3
+    className="c0"
+  >
+    Person name
+  </h3>
+  <div>
+    Known for:
+     
+     undefined, undefined
+  </div>
+</div>
+`;

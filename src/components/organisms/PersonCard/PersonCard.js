@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Heading } from '../../atoms';
+import { CONTENT_KEYS } from '../../../config/constants';
 
 const PersonCard = (props) => {
   const {
@@ -19,7 +20,7 @@ const PersonCard = (props) => {
     <div>
       <Heading level="3">{name}</Heading>
       <div>
-        Known for:
+        {CONTENT_KEYS.CARD_KNOWN_FOR}
         {' '}
         {moviesKnown()}
       </div>

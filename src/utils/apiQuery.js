@@ -5,8 +5,7 @@ import { ENDPOINTS } from '../config/constants';
 const API_KEY = process.env.MDB_API_KEY;
 
 /**
- * A simple client side caching using session storage.
- * The cache does not persist across browser windows.
+ * Verify if query is stored in cache.
  * @param {string} query The query to be cached
  * @returns {boolean} True if key exists false if doesn't
  */
