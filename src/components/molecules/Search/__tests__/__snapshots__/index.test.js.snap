@@ -73,6 +73,7 @@ exports[`components/molecules/Search matches the snapshot of the component 1`] =
     <button
       className="c2"
       disabled={false}
+      onClick={[Function]}
       type="button"
     >
       Search

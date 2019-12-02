@@ -13,7 +13,7 @@ The front end is structured by grouping progressively more complex components, i
  - atoms: atomic components that are the simplest units of UI
  - molecules: groups of atoms
  - organisms: groups of molecules
- - pages: groups of organisms
+ - pages: groups of organisms, representing a full page or route.
 
 This structure allows component reuse and to easily compose multiple views. 
 
@@ -51,5 +51,7 @@ From a terminal, the following scripts are available in the project root.
 
  ## TODO and wishlist
 
-  - Fix interactive test runner.
+  - Fix interactive test runner. `npm run test:watch` is not working.
+  - Abstract api calls to the Movie DB. Currently only a multi query is integrated.
+  - Handle pagination of query results. The Movie DB already provides parameters to query results per page.
 

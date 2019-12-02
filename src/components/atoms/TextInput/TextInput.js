@@ -1,10 +1,11 @@
-import React from 'react';
+/* eslint-disable react/display-name */
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import {
   StyledTextInput,
 } from './styles';
 
-const TextInput = (props) => {
+const TextInput = forwardRef((props, ref) => {
   const {
     placeholder,
     onChange,
@@ -12,12 +13,13 @@ const TextInput = (props) => {
 
   return (
     <StyledTextInput
+      ref={ref}
       type="text"
       placeholder={placeholder}
       onChange={onChange}
     />
   );
-};
+});
 
 TextInput.propTypes = {
   placeholder: PropTypes.string,

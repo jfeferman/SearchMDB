@@ -112,6 +112,7 @@ exports[`components/organisms/SearchBlock matches the snapshot of the component 
       <button
         className="c4"
         disabled={false}
+        onClick={[Function]}
         type="button"
       >
         Search

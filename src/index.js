@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import createContainer from './createContainer';
+import { HomePage } from './components/pages';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// eslint-disable-next-line no-unused-vars
+const ioc = createContainer();
+
+ReactDOM.render(<HomePage />, document.getElementById('root'));
