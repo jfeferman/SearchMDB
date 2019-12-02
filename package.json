@@ -27,7 +27,7 @@
     "build:docs": "jsdoc -c ./.jsdoc.conf.json -P ./package.json -d ./docs -r .",
     "stage:build": "cross-env $(cat ./.env.staging) webpack --mode development --progress",
     "deploy:build": "cross-env $(cat ./.env.production) webpack --mode production --optimize-minimize --progress",
-    "deploy:heroku": "npm run deploy:build && && npm run deploy:heroku:config",
+    "deploy:heroku": "npm run deploy:build && npm run deploy:heroku:config",
     "deploy:heroku:config": "heroku config:set -a search-mdb $(cat ./.env.production)",
     "clean": "rm -fr dist docs *.log",
     "clean:preinstall": "npm run clean && rm -fr package-lock.json node_modules"
