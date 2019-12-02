@@ -4,6 +4,8 @@
 
 The Search MDB is a web application to query the Movie Database. https://www.themoviedb.org/
 
+The search will return a general query 
+
 This document provides useful information for developers who need to install or update the application.
 
 ## System architecture
@@ -15,7 +17,10 @@ The front end is structured by grouping progressively more complex components, i
  - organisms: groups of molecules
  - pages: groups of organisms, representing a full page or route.
 
-This structure allows component reuse and to easily compose multiple views. 
+This structure allows component reuse and to easily compose multiple views.
+
+The front end contains a form that allows the user to query the Movie MDB via `GET` requests to the provided api https://developers.themoviedb.org/3/getting-started/introduction.
+
 
 ## Setting up the development environment
 
@@ -31,7 +36,7 @@ From the Mac OS terminal or most other UNIX-based command lines, follow the step
 
 1. Move into the application folder `cd SearchMDB`
 
-1. Download and unzip the environment varaibles file into the current folder. The zip can be obtained by the project maintainer. **DO NOT check these files into any publically accessible location.** Also note that the contents of the zip file are all "dot-files" so may not be visible to the default filesystem browser.
+1. Download and unzip the environment varaibles files into the root folder. The zip and/or files can be obtained by the project maintainer. **DO NOT check these files into any publically accessible location.** Also note that the contents of the zip file are all "dot-files" so may not be visible to the default filesystem browser.
 
 1. Install all packages `./bootstrap.sh`
 
@@ -54,4 +59,7 @@ From a terminal, the following scripts are available in the project root.
   - Fix interactive test runner. `npm run test:watch` is not working.
   - Abstract api calls to the Movie DB. Currently only a multi query is integrated.
   - Handle pagination of query results. The Movie DB already provides parameters to query results per page.
+  - Reason about and substitute react context provider for container ioc pattern.
+  - Improve results cards layout, add images, link to a modal dialog with more complete information.
+  - Improve test coverage.
 
