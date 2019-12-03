@@ -3,8 +3,7 @@
 [![react](https://img.shields.io/badge/built%20with-react-61dafb.svg)](https://reactjs.org/)
 
 The Search MDB is a web application to query the Movie Database. https://www.themoviedb.org/
-
-The search will return a general query 
+The search will make a general query of the MDB, retrieving data from the 'movies,' 'tv,' and 'persons' collections.
 
 This document provides useful information for developers who need to install or update the application.
 
@@ -12,9 +11,9 @@ This document provides useful information for developers who need to install or 
 
 The front end is structured by grouping progressively more complex components, in the following order:
 
- - atoms: atomic components that are the simplest units of UI
- - molecules: groups of atoms
- - organisms: groups of molecules
+ - atoms: atomic components that are the simplest units of UI;
+ - molecules: groups of atoms;
+ - organisms: groups of molecules;
  - pages: groups of organisms, representing a full page or route.
 
 This structure allows component reuse and to easily compose multiple views.
