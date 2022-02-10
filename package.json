@@ -92,7 +92,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "jsdoc": "^3.6.3",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "react-test-renderer": "^16.11.0",
     "sass-loader": "^8.0.0",
     "scss-loader": "0.0.1",
